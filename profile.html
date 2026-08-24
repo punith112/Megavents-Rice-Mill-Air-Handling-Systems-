@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MeGaVenTs — Company Profile</title>
+<style>
+:root{--primary:#1a5276;--primary-dark:#154360;--accent:#e67e22;--accent-light:#f39c12;--dark:#1c2833;--gray:#5d6d7e;--light:#f5f8fa;--wa:#25d366}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#333;line-height:1.6;font-size:11pt;margin:0;padding:0;string-set:doctitle ""}
+h1{string-set:doctitle content()}
+@page{size:A4;margin:2.2cm 2cm;@bottom-center{content:counter(page);font-size:9pt;color:#999}@top-right{content:"MeGaVenTs — MEG AVERKS TECHNOLOGIES";font-size:8pt;color:#999}}
+@page :first{margin:0;@bottom-center{content:none}@top-right{content:none}}
+@page plain{@top-right{content:none}}
+.cover{width:210mm;height:297mm;margin:0;position:relative;overflow:hidden;page-break-after:always;background:linear-gradient(150deg,#154360 0%,#1a5276 45%,#2980b9 100%);color:#fff}
+.cover .circle1{position:absolute;top:-90mm;right:-70mm;width:180mm;height:180mm;border-radius:50%;background:rgba(255,255,255,.06)}
+.cover .circle2{position:absolute;bottom:-60mm;left:-50mm;width:140mm;height:140mm;border-radius:50%;background:rgba(230,126,34,.18)}
+.cover .circle3{position:absolute;bottom:40mm;right:-30mm;width:70mm;height:70mm;border-radius:50%;border:2mm solid rgba(255,255,255,.15)}
+.cover-content{position:absolute;top:44%;left:0;right:0;transform:translateY(-50%);text-align:center;padding:0 20mm}
+.logo-badge{width:26mm;height:26mm;background:linear-gradient(135deg,#e67e22,#f39c12);border-radius:6mm;display:inline-flex;align-items:center;justify-content:center;font-size:22pt;font-weight:800;color:#fff;margin-bottom:8mm}
+.cover-title{font-size:34pt;font-weight:800;letter-spacing:1px;margin-bottom:2mm}
+.cover-sub{font-size:11pt;letter-spacing:4px;text-transform:uppercase;color:#f39c12;margin-bottom:10mm}
+.cover-tagline{font-size:16pt;font-weight:300;color:rgba(255,255,255,.92);margin-bottom:6mm}
+.cover-desc{font-size:10.5pt;color:rgba(255,255,255,.75);max-width:130mm;margin:0 auto}
+.cover-foot{position:absolute;bottom:16mm;left:0;right:0;text-align:center;font-size:9.5pt;color:rgba(255,255,255,.8);line-height:1.9}
+.cover-foot strong{color:#f39c12}
+.page{page-break-after:always}
+.page:last-child{page-break-after:auto}
+h2.sec{font-size:19pt;color:var(--primary);border-left:4pt solid var(--accent);padding-left:10pt;margin-bottom:4pt;page-break-after:avoid}
+.sec-kicker{font-size:9pt;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:14pt}
+p.lead{font-size:11.5pt;color:#444;margin-bottom:12pt}
+p{color:#444;margin-bottom:10pt;text-align:justify;text-align-last:left}
+table{width:100%;border-collapse:collapse;margin:12pt 0;max-width:100%}
+th{background:var(--primary);color:#fff;padding:7pt 9pt;text-align:left;font-size:10pt}
+td{padding:6.5pt 9pt;border-bottom:1pt solid #e0e6ec;font-size:10pt;vertical-align:top}
+tr{page-break-inside:avoid}
+.stat-row{display:flex;gap:5mm;margin:14pt 0}
+.stat{flex:1;border-top:3pt solid var(--accent);background:var(--light);padding:10pt;text-align:center}
+.stat .n{font-size:22pt;font-weight:800;color:var(--primary)}
+.stat .l{font-size:9pt;color:var(--gray);font-weight:600}
+.prod-grid{display:flex;flex-wrap:wrap;gap:6mm;margin-top:6pt}
+.prod{width:calc(50% - 3mm);border:1pt solid #dde5ec;padding:0;page-break-inside:avoid;margin-bottom:2mm}
+.prod img{width:100%;height:52mm;object-fit:cover;display:block}
+.prod .pb{padding:8pt 10pt}
+.prod h3{font-size:11.5pt;color:var(--primary-dark);margin-bottom:3pt}
+.prod p{font-size:9.5pt;color:#555;margin:0;text-align:left}
+.hl{background:linear-gradient(120deg,#154360,#1a5276);color:#fff;padding:12pt 14pt;margin:14pt 0;border-left:4pt solid var(--accent)}
+.hl strong{color:var(--accent-light)}
+.svc{margin-bottom:11pt;page-break-inside:avoid;border-left:3pt solid var(--accent);padding:2pt 0 2pt 10pt}
+.svc h3{font-size:12pt;color:var(--primary-dark);margin-bottom:2pt}
+.svc p{font-size:10pt;margin:0}
+.steps{display:flex;gap:4mm;margin:12pt 0}
+.step{flex:1;background:var(--light);border-top:3pt solid var(--primary);padding:9pt 7pt;text-align:center}
+.step .num{font-size:15pt;font-weight:800;color:var(--accent)}
+.step h4{font-size:9.5pt;color:var(--primary-dark);margin:3pt 0}
+.step p{font-size:8.5pt;color:#666;margin:0;text-align:center}
+.ind-grid{display:flex;flex-wrap:wrap;gap:4mm;margin-top:8pt}
+.ind{width:calc(25% - 3mm);background:var(--light);border:1pt solid #e2e9f0;padding:8pt 4pt;text-align:center;font-size:9.5pt;font-weight:600;color:var(--primary-dark)}
+.contact-box{background:var(--light);border:1pt solid #dfe7ee;padding:12pt 14pt;margin-bottom:10pt;page-break-inside:avoid}
+.contact-box h3{color:var(--primary);font-size:12pt;margin-bottom:4pt}
+.contact-box p{font-size:10.5pt;margin:2pt 0;text-align:left}
+.wa-line{color:var(--wa);font-weight:700}
+ul.checks li{margin-bottom:6pt;padding-left:14pt;position:relative;font-size:10.5pt}
+ul.checks li::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:800}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="circle1"></div><div class="circle2"></div><div class="circle3"></div>
+  <div class="cover-content">
+    <div class="logo-badge">MV</div>
+    <div class="cover-title">MEGAVeNTS</div>
+    <div class="cover-sub">MEG AVERKS TECHNOLOGIES</div>
+    <div class="cover-tagline">Assured Systems for a Cleaner Environment</div>
+    <p class="cover-desc">Manufacturer of industrial pollution control &amp; material handling equipment — rotary airlock valves, cyclone separators, pulse jet bag filters, pneumatic conveying systems and blowers — with complete installation and after-sales service support.</p>
+  </div>
+  <div class="cover-foot">
+    <strong>Bengaluru, Karnataka, India</strong><br>
+    +91 90192 71476 &nbsp;·&nbsp; +91 96110 71087 &nbsp;·&nbsp; WhatsApp: +91 90192 71476
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="page">
+  <div class="sec-kicker">Company Profile</div>
+  <h2 class="sec">About MeGaVenTs</h2>
+  <p class="lead">MEG AVERKS TECHNOLOGIES (MeGaVenTs) is a Bengaluru-based manufacturer of air pollution control and bulk material handling equipment, serving rice mills, dal mills, flour mills, cement plants and process industries across India.</p>
+  <p>From a single cyclone separator to a complete turnkey dust extraction plant, every system is engineered in-house for reliability, efficiency and compliance with CPCB / KSPCB pollution control norms. With our own fabrication facility at Magadi Road and office at Rajajinagar Industrial Estate, we control quality at every step — and stand behind every installation with dependable after-sales service.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="n">15+</div><div class="l">Years of Experience</div></div>
+    <div class="stat"><div class="n">100+</div><div class="l">Systems Installed</div></div>
+    <div class="stat"><div class="n">8+</div><div class="l">Industries Served</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">Units in Bengaluru</div></div>
+  </div>
+  <h3 style="color:var(--primary-dark);margin:10pt 0 6pt">Why Customers Choose Us</h3>
+  <ul class="checks">
+    <li>In-house design &amp; fabrication facility — full quality control</li>
+    <li>Complete installation &amp; commissioning by our own trained team</li>
+    <li>Dependable after-sales support — AMC, genuine spares and breakdown service</li>
+    <li>Custom-built systems matched to your plant layout and capacity</li>
+    <li>Systems compliant with CPCB / KSPCB emission norms</li>
+  </ul>
+</div>
+
+<!-- PRODUCTS 1 -->
+<div class="page">
+  <div class="sec-kicker">What We Manufacture</div>
+  <h2 class="sec">Our Products — Dust Collection</h2>
+  <div class="prod-grid">
+    <div class="prod"><img src="images/pulse_jet_filter.jpg" alt=""><div class="pb"><h3>Pulse Jet Bag Filters</h3><p>Online pulse-jet dust collectors with filter bags and cages for fine particulate control, helping plants meet KSPCB / CPCB emission norms.</p></div></div>
+    <div class="prod"><img src="images/cyclone_separator_2.jpg" alt=""><div class="pb"><h3>Cyclone Separators</h3><p>High-efficiency cyclones for coarse dust and husk separation in rice mills, dal mills, flour mills and wood-working units. Low pressure drop design.</p></div></div>
+    <div class="prod"><img src="images/ash_bag_filter.jpg" alt=""><div class="pb"><h3>Dust Extraction Systems</h3><p>Complete turnkey dust extraction plants with ducting, suction hoods and spark arrestors — from design to commissioning.</p></div></div>
+    <div class="prod"><img src="images/rotary_airlock_1.jpg" alt=""><div class="pb"><h3>Rotary Airlock Valves</h3><p>Heavy-duty rotary feeders for controlled, air-tight discharge of powders and granules from cyclones, hoppers and bag filters. MS / SS, custom sizes.</p></div></div>
+  </div>
+</div>
+
+<!-- PRODUCTS 2 -->
+<div class="page">
+  <div class="sec-kicker">What We Manufacture</div>
+  <h2 class="sec">Our Products — Conveying &amp; Air Handling</h2>
+  <div class="prod-grid">
+    <div class="prod"><img src="images/pneumatic_conveyor.jpg" alt=""><div class="pb"><h3>Pneumatic Conveying Systems</h3><p>Lean and dense phase conveying for grains, flour, cement, ash and other bulk materials — dust-free transfer with minimal manpower.</p></div></div>
+    <div class="prod"><img src="images/centrifugal_blower.jpg" alt=""><div class="pb"><h3>Centrifugal Fans &amp; Blowers</h3><p>ID / FD fans and high-pressure blowers for dust extraction, husk conveying and process air. Dynamically balanced impellers.</p></div></div>
+    <div class="prod"><img src="images/axial_blower_wm.jpg" alt=""><div class="pb"><h3>Axial Flow Fans</h3><p>High-volume axial fans for ventilation and fume extraction in factories, warehouses and processing plants.</p></div></div>
+    <div class="prod"><img src="images/slide_gate_manual.jpg" alt=""><div class="pb"><h3>Slide Gate Valves</h3><p>Manual and pneumatic slide gates for positive shut-off in hoppers, silos and conveying lines. Built for abrasive materials.</p></div></div>
+  </div>
+</div>
+
+<!-- SERVICE -->
+<div class="page">
+  <div class="sec-kicker">Our Commitment</div>
+  <h2 class="sec">Installation &amp; After-Sales Service</h2>
+  <div class="hl">Our relationship doesn't end at delivery. <strong>Every system we install is backed by dedicated service support</strong> — so your plant keeps running, season after season.</div>
+  <div class="svc"><h3>1. Site Survey &amp; Custom Design</h3><p>Our engineers visit your plant, study the layout and dust load, and design a system that fits — no off-the-shelf compromises.</p></div>
+  <div class="svc"><h3>2. Professional Installation &amp; Commissioning</h3><p>Trained in-house team handles erection, ducting, electricals and commissioning — completed on schedule with minimal disruption to your production.</p></div>
+  <div class="svc"><h3>3. AMC &amp; Genuine Spare Parts</h3><p>Annual maintenance contracts, genuine spares — filter bags, cages, rotors, bearings — and preventive maintenance visits that avoid breakdowns before they happen.</p></div>
+  <div class="svc"><h3>4. Rapid Service Response</h3><p>Breakdown? One call is all it takes. Quick-response service team with on-site support across Karnataka and South India.</p></div>
+  <h3 style="color:var(--primary-dark);margin:12pt 0 4pt">How We Work — From Enquiry to Commissioning</h3>
+  <div class="steps">
+    <div class="step"><div class="num">01</div><h4>Consultation</h4><p>Requirement study, call or site visit</p></div>
+    <div class="step"><div class="num">02</div><h4>Design &amp; Quote</h4><p>System design, itemised quotation</p></div>
+    <div class="step"><div class="num">03</div><h4>Fabrication</h4><p>In-house manufacturing, QC</p></div>
+    <div class="step"><div class="num">04</div><h4>Installation</h4><p>Erection &amp; commissioning</p></div>
+    <div class="step"><div class="num">05</div><h4>After-Sales</h4><p>AMC, spares, rapid service</p></div>
+  </div>
+</div>
+
+<!-- INDUSTRIES + CONTACT -->
+<div class="page">
+  <div class="sec-kicker">Who We Serve</div>
+  <h2 class="sec">Industries We Serve</h2>
+  <div class="ind-grid">
+    <div class="ind">Rice Mills</div><div class="ind">Dal Mills</div><div class="ind">Flour Mills</div><div class="ind">Cement Plants</div>
+    <div class="ind">Spice Processing</div><div class="ind">Pharma &amp; Chemical</div><div class="ind">Wood Working</div><div class="ind">Foundries</div>
+  </div>
+  <div style="height:14pt"></div>
+  <div class="sec-kicker">Get In Touch</div>
+  <h2 class="sec">Contact Us</h2>
+  <div class="contact-box">
+    <h3>Sales &amp; Service — WhatsApp</h3>
+    <p class="wa-line">Mr. Punith — +91 90192 71476 (fastest response for quotes &amp; service requests)</p>
+    <p>Phone: Mr. Punith — +91 90192 71476 · Mr. Bhagwan — +91 90087 90457</p>
+  </div>
+  <div class="contact-box">
+    <h3>Office</h3>
+    <p>M144, Ground Floor, Rajajinagar Industrial Estate, Bengaluru 560010, Karnataka, India</p>
+  </div>
+  <div class="contact-box">
+    <h3>Works (Fabrication Facility)</h3>
+    <p>Magadi Road, Kadabgere Cross, Bengaluru, Karnataka, India</p>
+  </div>
+  <p style="text-align:center;margin-top:16pt;color:var(--primary);font-weight:700">Assured Systems for a Cleaner Environment</p>
+</div>
+
+</body>
+</html>
